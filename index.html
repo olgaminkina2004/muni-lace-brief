@@ -6,21 +6,15 @@
 <title>Рекламный бриф — MUNI LACE Боди</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #F5F0E8;
-    --warm-black: #1A1410;
-    --nude: #C9A98A;
-    --dusty-rose: #C4897A;
-    --dark-accent: #2E1F14;
-    --mid: #7A6355;
-    --border: rgba(201,169,138,0.3);
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
-    background: var(--cream);
-    color: var(--warm-black);
+    background: #F5F0E8;
+    color: #1A1410;
     font-family: 'Jost', sans-serif;
     font-weight: 300;
     line-height: 1.7;
@@ -29,12 +23,718 @@
   .page {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 40px;
+    padding: 40px;
   }
 
+  /* Header */
   .header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #C9A98A;
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+    gap: 20px;
+  }
+
+  .brand-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    font-size: 11px;
+    color: #C9A98A;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #2E1F14;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: #C4897A;
+  }
+
+  .header-meta {
+    text-align: right;
+    font-size: 12px;
+    color: #7A6355;
+    line-height: 1.8;
+  }
+
+  .doc-tag {
+    display: inline-block;
+    background: #2E1F14;
+    color: #F5F0E8;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+  }
+
+  /* Артикулы */
+  .articles-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .art-chip {
+    background: white;
+    border: 1px solid rgba(201,169,138,0.3);
+    padding: 10px 18px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .art-chip .art-num {
+    font-weight: 600;
+    color: #2E1F14;
+    font-size: 15px;
+  }
+
+  .art-chip .art-desc {
+    color: #7A6355;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Секции */
+  .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(201,169,138,0.3);
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    color: #C9A98A;
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2E1F14;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  /* Сетки */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Инфоблоки */
+  .info-block {
+    background: white;
+    padding: 20px 24px;
+    border-left: 3px solid #C9A98A;
+  }
+
+  .info-block .label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #7A6355;
+    margin-bottom: 8px;
+  }
+
+  .info-block .value {
+    font-size: 14px;
+    color: #2E1F14;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .info-block .value strong {
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 14px;
+    color: #3A2E26;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  /* Списки */
+  ul.brief-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  ul.brief-list li {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: #3A2E26;
+    align-items: flex-start;
+  }
+
+  ul.brief-list li::before {
+    content: '—';
+    color: #C9A98A;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Цвета */
+  .colors-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .color-swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .swatch-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .swatch-label {
+    font-size: 10px;
+    color: #7A6355;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Таблица */
+  .media-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .media-table th {
+    background: #2E1F14;
+    color: #F5F0E8;
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .media-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(201,169,138,0.3);
+    color: #3A2E26;
+    vertical-align: top;
+  }
+
+  .media-table td:first-child {
+    font-weight: 500;
+  }
+
+  .media-table tr:nth-child(even) td {
+    background: rgba(255,255,255,0.5);
+  }
+
+  .media-table tr:hover td {
+    background: rgba(201,169,138,0.1);
+  }
+
+  .media-table tr:last-child td {
+    background: #2E1F14;
+    color: #F5F0E8;
+    border: none;
+  }
+
+  /* Инсайт */
+  .insight-box {
+    background: #2E1F14;
+    color: #F5F0E8;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+  }
+
+  .insight-box .insight-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #C9A98A;
+    margin-bottom: 10px;
+  }
+
+  .insight-box blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.5;
+    color: #F5F0E8;
+  }
+
+  /* Слоган */
+  .slogan-box {
+    background: #C4897A;
+    color: white;
+    padding: 24px 28px;
+    margin-top: 16px;
+  }
+
+  .slogan-box .slogan-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+
+  .slogan-box .slogan-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  /* Цели */
+  .goal-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+
+  .goal-num {
+    background: #C9A98A;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 2px;
+    border-radius: 50%;
+  }
+
+  .goal-text {
+    font-size: 14px;
+    color: #3A2E26;
+    line-height: 1.6;
+  }
+
+  /* KPI карточки */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .kpi-card {
+    background: #2E1F14;
+    color: #F5F0E8;
+    padding: 16px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .kpi-card .kpi-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .kpi-card .kpi-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+
+  /* Фото */
+  .photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .photo-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 260px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(201,169,138,0.3);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Подвал */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(201,169,138,0.3);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #7A6355;
+  }
+
+  @media (max-width: 700px) {
+    .page { padding: 20px; }
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .photos-container { flex-direction: column; align-items: center; }
+    .photo-card { max-width: 100%; }
+    .media-table { font-size: 11px; }
+    .media-table th, .media-table td { padding: 8px 6px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media print {
+    .page { padding: 20px; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ШАПКА -->
+  <div class="header">
+    <div>
+      <div class="brand-label">MUNI LACE · Рекламное дело</div>
+      <h1>Рекламный<br><em>бриф</em></h1>
+    </div>
+    <div class="header-meta">
+      <div class="doc-tag">Задание 1</div>
+      <div>Категория: <strong>Боди корректирующие</strong></div>
+      <div>Канал: <strong>Wildberries / SMM</strong></div>
+      <div>Дата: <strong>Май 2026</strong></div>
+    </div>
+  </div>
+
+  <!-- АРТИКУЛЫ -->
+  <div class="articles-row">
+    <div class="art-chip"><span class="art-num">5402</span><span class="art-desc">Боди-майка · 123 фабрика</span></div>
+    <div class="art-chip"><span class="art-num">5403</span><span class="art-desc">Боди-майка · 151 фабрика</span></div>
+    <div class="art-chip"><span class="art-num">5302</span><span class="art-desc">Боди-топ · 123 фабрика</span></div>
+    <div class="art-chip"><span class="art-num">5303</span><span class="art-desc">Боди-топ · 151 фабрика</span></div>
+  </div>
+
+  <!-- РАЗДЕЛ 1 -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 01</div>
+    <div class="section-title">Общая информация о бренде</div>
+    <div class="two-col">
+      <div class="info-block">
+        <div class="label">Бренд</div>
+        <div class="value"><strong>MUNI LACE</strong><br>Женское бельё и корректирующие изделия. Продаётся через маркетплейсы (Wildberries, OZON). Импортёр — ООО «ТЕКС МОД», производство в Китае.</div>
+      </div>
+      <div class="info-block">
+        <div class="label">Задача агентству</div>
+        <div class="value">Вывести линейку боди арт. 5302, 5303, 5402, 5403 на рынок, увеличить долю бренда в категории с 1,5% до 2,5% за 3 месяца.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 2. ТОВАР + ФОТО -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 02</div>
+    <div class="section-title">Информация о товаре</div>
+    
+    <div class="two-col" style="margin-bottom:20px;">
+      <div class="info-block">
+        <div class="label">Что рекламируем</div>
+        <div class="value">Боди корректирующие серии: боди-майка (арт. 5402, 5403) и боди-топ с вырезом (арт. 5302, 5303). Новинки — на рынке менее 3 месяцев.</div>
+      </div>
+      <div class="info-block">
+        <div class="label">Состав и характеристики</div>
+        <div class="value"><strong>85% Полиамид + 15% Эластан</strong><br>Материал: микрофибра. Фактура: гладкая. Размеры: XS–2XL (42–54).<br>Лёгкая коррекция, поддержка груди, до -5 см в талии.</div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <div class="label">Фото товара</div>
+      <div class="value">
+        <div class="photos-container">
+          <div class="photo-card">
+            <img src="./bodi_muni_1.webp" alt="Боди MUNI LACE арт. 5302">
+          </div>
+          <div class="photo-card">
+            <img src="./bodi_muni_2.webp" alt="Боди MUNI LACE арт. 5402">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block" style="margin-top: 20px;">
+      <div class="label">Доступные цвета</div>
+      <div class="value">
+        <div class="colors-grid">
+          <div class="color-swatch"><div class="swatch-circle" style="background:#1A1410;"></div><span class="swatch-label">Чёрный</span></div>
+          <div class="color-swatch"><div class="swatch-circle" style="background:#C9A98A;"></div><span class="swatch-label">Бежевый</span></div>
+          <div class="color-swatch"><div class="swatch-circle" style="background:#F0EDE8;"></div><span class="swatch-label">Белый</span></div>
+          <div class="color-swatch"><div class="swatch-circle" style="background:#7B4F35;"></div><span class="swatch-label">Коричневый</span></div>
+          <div class="color-swatch"><div class="swatch-circle" style="background:#8A8A8A;"></div><span class="swatch-label">Серый</span></div>
+          <div class="color-swatch"><div class="swatch-circle" style="background:#8B2635;"></div><span class="swatch-label">Бордовый</span></div>
+          <div class="color-swatch"><div class="swatch-circle" style="background:#E8A0A8;"></div><span class="swatch-label">Розовый</span></div>
+          <div class="color-swatch"><div class="swatch-circle" style="background:#A8C8A0;"></div><span class="swatch-label">Св. зелёный</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-block" style="margin-top: 20px;">
+      <div class="label">Характеристики → Потребительские выгоды</div>
+      <div class="value">
+        <table style="width:100%; border-collapse:collapse; margin-top:8px;">
+          <tr style="border-bottom:1px solid rgba(201,169,138,0.3);"><td style="padding:8px 8px 8px 0; width:45%;"><strong>85% полиамид + 15% эластан</strong></td><td style="padding:8px 0;">→ Сидит как вторая кожа, не сковывает движения</div></td></tr>
+          <tr style="border-bottom:1px solid rgba(201,169,138,0.3);"><td style="padding:8px 8px 8px 0;"><strong>Лёгкая коррекция</strong></td><td style="padding:8px 0;">→ До -5 см в талии, поддержка груди</div></td></tr>
+          <tr style="border-bottom:1px solid rgba(201,169,138,0.3);"><td style="padding:8px 8px 8px 0;"><strong>Premium ткань</strong></td><td style="padding:8px 0;">→ Приятная на ощупь, не теряет форму</div></td></tr>
+          <tr style="border-bottom:1px solid rgba(201,169,138,0.3);"><td style="padding:8px 8px 8px 0;"><strong>Размеры XS-2XL</strong></td><td style="padding:8px 0;">→ Подходит для разных типов фигур</div></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 3 -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 03</div>
+    <div class="section-title">Каналы сбыта</div>
+    <div class="three-col">
+      <div class="info-block"><div class="label">Форма продажи</div><div class="value">Розница через маркетплейсы (штучно)</div></div>
+      <div class="info-block"><div class="label">Площадки</div><div class="value">Wildberries (приоритет), OZON</div></div>
+      <div class="info-block"><div class="label">Регионы</div><div class="value">Россия, вся страна. Приоритет — Москва, СПб, города-миллионники.</div></div>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 4 -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 04</div>
+    <div class="section-title">Целевая аудитория</div>
+    <div class="two-col">
+      <div>
+        <div class="info-block" style="margin-bottom:16px;"><div class="label">Демография</div><div class="value">Женщины, 22–45 лет. Россия, города 100 000+. Доход: средний и выше среднего.</div></div>
+        <div class="info-block"><div class="label">Психография</div><div class="value">Следят за внешним видом, ценят удобство и качество. Совершают покупки онлайн, изучают отзывы.</div></div>
+      </div>
+      <div>
+        <div class="info-block" style="margin-bottom:16px;"><div class="label">Поведение (данные WB)</div><div class="value">Покупают бельё онлайн 2–5 раз в год. Сравнивают по фото, составу и отзывам.</div></div>
+        <div class="info-block"><div class="label">Боли и потребности</div><div class="value">• Боди «торчит» под одеждой<br>• Некомфортный материал<br>• Сложно найти базовые цвета в нужном размере</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 5. КОНКУРЕНТЫ -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 05</div>
+    <div class="section-title">Конкурентная среда (данные WB 23.03–21.04.2026)</div>
+    
+    <div class="info-block" style="margin-bottom: 16px;">
+      <div class="label">Источник данных</div>
+      <div class="value">Выгрузка Wildberries — категория «Боди». Всего 200 брендов. Оборот категории: 807 млн ₽ за 30 дней.</div>
+    </div>
+
+    <table class="media-table">
+      <thead>
+        <tr><th>Позиция</th><th>Бренд</th><th>Заказы, шт.</th><th>Доля рынка</th><th>Ср. цена, ₽</th><th>Рейтинг</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="font-weight:600;">1</td><td><strong>DRSS</strong></td><td>47 055</td><td>8,51%</td><td>1 580</td><td>5,0</td></tr>
+        <tr><td style="font-weight:600;">2</td><td><strong>WAISTLINE</strong></td><td>19 620</td><td>3,55%</td><td>2 435</td><td>4,87</td></tr>
+        <tr><td style="font-weight:600;">3</td><td><strong>BIRKA ART</strong></td><td>23 489</td><td>4,25%</td><td>2 054</td><td>5,0</td></tr>
+        <tr><td style="font-weight:600;">4</td><td><strong>Lavites</strong></td><td>16 460</td><td>2,98%</td><td>1 787</td><td>4,89</td></tr>
+        <tr><td style="font-weight:600;">5</td><td><strong>LIE</strong></td><td>16 808</td><td>3,04%</td><td>1 565</td><td>5,0</td></tr>
+        <tr style="background: rgba(201,169,138,0.2);"><td style="font-weight:600;">16</td><td><strong>MUNI LACE</strong></td><td><strong>8 268</strong></td><td><strong>1,5%</strong></td><td><strong>1 444</strong></td><td><strong>4,77</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col" style="margin-top: 20px;">
+      <div class="info-block"><div class="label">Анализ позиции</div><div class="value">Доля рынка: 1,5% (16-е место). Отставание от лидера DRSS — в 5,7 раза. Рейтинг 4,77 — ниже лидеров.</div></div>
+      <div class="info-block"><div class="label">Стратегия и цель</div><div class="value">Цель: подняться на 12-13 место, доля 2,5% за 3 месяца. Заказы: с 8 268 до 12 000 шт./мес.</div></div>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 6 -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 06</div>
+    <div class="section-title">Предыдущая рекламная деятельность</div>
+    <p>Данная линейка боди выводится на рынок впервые. Однако бренд MUNI LACE уже присутствует на Wildberries:</p>
+    <ul class="brief-list" style="margin: 12px 0;"><li>Заказы: 8 268 шт. (доля 1,5%, 16-е место)</li><li>Выручка: 12,2 млн ₽ за 30 дней</li><li>Рейтинг: 4,77</li></ul>
+  </div>
+
+  <!-- РАЗДЕЛ 7. ЦЕЛИ -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 07</div>
+    <div class="section-title">Маркетинговые цели (SMART)</div>
+    <div class="goal-item"><span class="goal-num">1</span><span class="goal-text">Доля рынка: с <strong>1,5% до 2,5%</strong> к августу 2026</span></div>
+    <div class="goal-item"><span class="goal-num">2</span><span class="goal-text">Заказы: увеличить с <strong>8 268 до 12 000 шт./мес.</strong> (+45%)</span></div>
+    <div class="goal-item"><span class="goal-num">3</span><span class="goal-text">Рейтинг: поднять с <strong>4,77 до 4,85</strong></span></div>
+    <div class="goal-item"><span class="goal-num">4</span><span class="goal-text">Позиция: подняться с <strong>16 до 12–13 места</strong> в категории «Боди»</span></div>
+    <div class="goal-item"><span class="goal-num">5</span><span class="goal-text">ROMI: достичь <strong>400%</strong> (4 ₽ выручки на 1 ₽ вложений)</span></div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-value">1,5% → 2,5%</div><div class="kpi-label">Доля рынка</div></div>
+      <div class="kpi-card"><div class="kpi-value">8 268 → 12 000</div><div class="kpi-label">Заказы/мес</div></div>
+      <div class="kpi-card"><div class="kpi-value">4,77 → 4,85</div><div class="kpi-label">Рейтинг</div></div>
+      <div class="kpi-card"><div class="kpi-value">16 → 12-13</div><div class="kpi-label">Позиция</div></div>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 8–9 -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 08–09</div>
+    <div class="section-title">Средства распространения и суть предложения</div>
+    <div class="two-col">
+      <div class="info-block"><div class="label">Каналы</div><div class="value">• WB внутренняя реклама (60% бюджета)<br>• SMM — Telegram, ВК, Instagram<br>• Инфлюенсеры (10–50K)</div></div>
+      <div class="info-block"><div class="label">Суть предложения (УТП)</div><div class="value">Боди MUNI LACE — невидимая основа для любого образа. Микрофибра 85/15 — лучший состав в масс-сегменте. Лёгкая коррекция, поддержка груди, до -5 см в талии.</div></div>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 10 -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 10 + КРЕАТИВНОЕ УПРАЖНЕНИЕ</div>
+    <div class="section-title">Тон, слоганы и визуальное направление</div>
+    <div class="insight-box"><div class="insight-label">КЛЮЧЕВОЙ ИНСАЙТ</div><blockquote>«Я хочу чувствовать себя ухоженно даже в том, чего никто не видит»</blockquote></div>
+    <div class="two-col" style="margin-top:16px;">
+      <ul class="brief-list"><li>MUNI LACE. Невидимая уверенность.</li><li>Вторая кожа. Первая уверенность.</li><li>Ты под одеждой — королева.</li><li>Боди, который вы выбрали бы сами.</li><li>Невидимость высшего качества.</li></ul>
+      <ul class="brief-list"><li>MUNI LACE. Скрывает всё, кроме достоинств.</li><li>Ваш секрет идеального силуэта.</li><li>Не бойся быть откровенной… с собой.</li><li>Premium ткань. Доступная цена.</li><li>85% полиамида. 100% комфорта.</li></ul>
+    </div>
+    <div class="slogan-box"><div class="slogan-label">ЛУЧШИЙ СЛОГАН</div><div class="slogan-text">MUNI LACE. Невидимая уверенность.</div></div>
+    <div class="info-block" style="margin-top:16px;"><div class="label">Визуальное направление</div><div class="value">Натуральные съёмки при дневном свете, минимализм, модели разных размеров, акцент на «невидимость» под одеждой.</div></div>
+  </div>
+
+  <!-- РАЗДЕЛ 11–12. БЮДЖЕТ, СРОКИ, МЕДИАПЛАН -->
+  <div class="section">
+    <div class="section-num">РАЗДЕЛ 11–12</div>
+    <div class="section-title">Бюджет, сроки и медиаплан</div>
+    
+    <table class="media-table">
+      <thead>
+        <tr>
+          <th>Сроки</th>
+          <th>Бюджет</th>
+          <th>Формат</th>
+          <th>Канал</th>
+          <th>Охват</th>
+          <th>Заявки</th>
+          <th>Конверсия</th>
+          <th>План. прибыль</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01.06–30.06.2026</td>
+          <td>60 000 ₽</td>
+          <td>Инфографика, карточки</td>
+          <td>WB внутренняя</td>
+          <td>80 000</td>
+          <td>800</td>
+          <td>1,0%</td>
+          <td>1 155 200 ₽</td>
+        </tr>
+        <tr>
+          <td>01.06–30.06.2026</td>
+          <td>40 000 ₽</td>
+          <td>Reels + Stories</td>
+          <td>Instagram, ВК</td>
+          <td>60 000</td>
+          <td>480</td>
+          <td>0,8%</td>
+          <td>693 120 ₽</td>
+        </tr>
+        <tr>
+          <td>01.07–31.07.2026</td>
+          <td>50 000 ₽</td>
+          <td>Пост-обзор + раздача</td>
+          <td>Инфлюенсеры</td>
+          <td>100 000</td>
+          <td>800</td>
+          <td>0,8%</td>
+          <td>1 155 200 ₽</td>
+        </tr>
+        <tr>
+          <td>01.08–31.08.2026</td>
+          <td>70 000 ₽</td>
+          <td>Контекст + баннеры</td>
+          <td>WB + SMM + Ads</td>
+          <td>180 000</td>
+          <td>1 440</td>
+          <td>0,8%</td>
+          <td>2 079 360 ₽</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr style="background: #2E1F14; color: #F5F0E8; font-weight: 600;">
+          <td><strong>ИТОГО за 3 месяца</strong></td>
+          <td><strong>220 000 ₽</strong></td>
+          <td>—</td>
+          <td>—</td>
+          <td><strong>420 000</strong></td>
+          <td><strong>3 520</strong></td>
+          <td><strong>0,84%</strong></td>
+          <td><strong>5 082 880 ₽</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="info-block" style="margin-top: 20px;">
+      <div class="label">Прогноз эффективности (ROMI)</div>
+      <div class="value">
+        <strong>ROMI = (Выручка − Бюджет) / Бюджет × 100%</strong><br>
+        ROMI = (5 082 880 − 220 000) / 220 000 × 100% = <strong>~2 210%</strong><br><br>
+        <strong>Более реалистичный прогноз с учётом Returns:</strong> ROMI ~ <strong>350–450%</strong><br>
+        KPI для отслеживания: CTR ≥3% | Конверсия ≥0,8% | CPO ≤150 ₽ | Рейтинг 4,85+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>MUNI LACE · Рекламный бриф · Задание 1 · Данные WB 23.03–21.04.2026</span>
+    <span>Май 2026</span>
+  </div>
+
+</div>
+</body>
+</html>    justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
     border-bottom: 1px solid var(--nude);
