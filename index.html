@@ -195,82 +195,70 @@
       font-weight: 400;
     }
 
-    /* Исправленная таблица */
-    .media-table {
+    /* Таблица конкурентов (раздел 5) — исправлена */
+    .competitor-table {
       width: 100%;
       border-collapse: collapse;
       margin: 20px 0;
       font-size: 14px;
     }
 
-    .media-table th,
-    .media-table td {
+    .competitor-table th,
+    .competitor-table td {
       padding: 12px 8px;
       border-bottom: 1px solid #e2d8ce;
       text-align: center;
       vertical-align: middle;
     }
 
-    .media-table th {
+    .competitor-table th {
       background: #2E1F14;
       color: #F5F0E8;
       font-weight: 500;
       font-size: 13px;
+    }
+
+    .competitor-table td {
+      background: white;
+      color: #2E1F14;
+    }
+
+    .competitor-table tr:hover td {
+      background: rgba(201,169,138,0.1);
+    }
+
+    /* Таблица медиаплана (раздел 11) — как было, с чёрным итогом */
+    .media-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 20px 0;
+    }
+
+    .media-table th {
+      background: #2E1F14;
+      color: #F5F0E8;
+      padding: 12px 10px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 11px;
       letter-spacing: 0.05em;
     }
 
     .media-table td {
-      background: white;
+      padding: 12px 10px;
+      border-bottom: 1px solid #e2d8ce;
       color: #2E1F14;
+      vertical-align: top;
     }
 
     .media-table tr:hover td {
       background: rgba(201,169,138,0.1);
     }
 
-    .media-table tfoot tr td {
+    .media-table tr:last-child td {
       background: #2E1F14;
       color: #F5F0E8;
-      font-weight: 600;
-    }
-
-    /* Таблица для медиаплана (другая, много колонок) */
-    .media-plan-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 12px;
-      overflow-x: auto;
-      display: block;
-    }
-
-    .media-plan-table th,
-    .media-plan-table td {
-      padding: 10px 6px;
-      border-bottom: 1px solid #e2d8ce;
-      text-align: center;
-      vertical-align: middle;
-    }
-
-    .media-plan-table th {
-      background: #2E1F14;
-      color: #F5F0E8;
-      font-weight: 500;
-      font-size: 11px;
-    }
-
-    .media-plan-table td {
-      background: white;
-    }
-
-    @media (max-width: 800px) {
-      .media-plan-table {
-        font-size: 10px;
-      }
-      .media-plan-table th,
-      .media-plan-table td {
-        padding: 6px 3px;
-      }
     }
 
     .photos-container {
@@ -321,6 +309,16 @@
       .photo-card {
         max-width: 100%;
         width: 100%;
+      }
+      .competitor-table,
+      .media-table {
+        font-size: 11px;
+      }
+      .competitor-table th,
+      .competitor-table td,
+      .media-table th,
+      .media-table td {
+        padding: 6px 3px;
       }
     }
 
@@ -585,23 +583,16 @@
     </div>
   </div>
 
-  <!-- РАЗДЕЛ 5 — ИСПРАВЛЕННАЯ ТАБЛИЦА -->
+  <!-- РАЗДЕЛ 5 — ИСПРАВЛЕННАЯ ТАБЛИЦА КОНКУРЕНТОВ -->
   <div class="section">
     <div class="section-num">РАЗДЕЛ 05</div>
     <div class="section-title">Конкурентная среда (данные WB 23.03–21.04.2026)</div>
     
     <div class="info-block"><div class="label">Источник данных</div><div class="value">Выгрузка Wildberries — категория «Боди». Всего 200 брендов, оборот категории 807 млн ₽ за 30 дней.</div></div>
 
-    <table class="media-table">
+    <table class="competitor-table">
       <thead>
-        <tr>
-          <th>Позиция</th>
-          <th>Бренд</th>
-          <th>Заказы, шт.</th>
-          <th>Доля рынка</th>
-          <th>Ср. цена, ₽</th>
-          <th>Рейтинг</th>
-        </tr>
+        <tr><th>Позиция</th><th>Бренд</th><th>Заказы, шт.</th><th>Доля рынка</th><th>Ср. цена, ₽</th><th>Рейтинг</th></tr>
       </thead>
       <tbody>
         <tr><td>1</td><td>DRSS</td><td>47 055</td><td>8,51%</td><td>1 580</td><td>5,0</td></tr>
@@ -700,32 +691,23 @@
     </div>
   </div>
 
-  <!-- РАЗДЕЛ 11–12 -->
+  <!-- РАЗДЕЛ 11–12 — ТАБЛИЦА МЕДИАПЛАНА КАК БЫЛА -->
   <div class="section">
     <div class="section-num">РАЗДЕЛ 11–12</div>
     <div class="section-title">Бюджет, сроки и медиаплан</div>
     
-    <table class="media-plan-table">
+    <table class="media-table">
       <thead>
-        <tr>
-          <th>Сроки</th>
-          <th>Бюджет</th>
-          <th>Формат</th>
-          <th>Канал</th>
-          <th>Охват</th>
-          <th>Заявки</th>
-          <th>Конверсия</th>
-          <th>План. прибыль</th>
-        </tr>
+        <tr><th>Сроки</th><th>Бюджет</th><th>Формат</th><th>Канал</th><th>Охват</th><th>Заявки</th><th>Конверсия</th><th>План. прибыль</th></tr>
       </thead>
       <tbody>
-        <tr><td style="font-weight:600;">01.06–30.06.2026</td><td>60 000 ₽</td><td>Инфографика, карточки</td><td>WB внутренняя</td><td>80 000</td><td>800</td><td>1,0%</td><td>1 155 200 ₽</td></tr>
-        <tr><td style="font-weight:600;">01.06–30.06.2026</td><td>40 000 ₽</td><td>Reels + Stories</td><td>Instagram, ВК</td><td>60 000</td><td>480</td><td>0,8%</td><td>693 120 ₽</td></tr>
-        <tr><td style="font-weight:600;">01.07–31.07.2026</td><td>50 000 ₽</td><td>Пост-обзор + раздача</td><td>Инфлюенсеры</td><td>100 000</td><td>800</td><td>0,8%</td><td>1 155 200 ₽</td></tr>
-        <tr><td style="font-weight:600;">01.08–31.08.2026</td><td>70 000 ₽</td><td>Контекст + баннеры</td><td>WB + SMM + Ads</td><td>180 000</td><td>1 440</td><td>0,8%</td><td>2 079 360 ₽</td></tr>
+        <tr><td style="font-weight:600;">01.06–30.06.2026</td><td style="text-align:right;">60 000 ₽</td><td>Инфографика, карточки</td><td>WB внутренняя</td><td style="text-align:right;">80 000</td><td style="text-align:right;">800</td><td style="text-align:right;">1,0%</td><td style="text-align:right;">1 155 200 ₽</td></tr>
+        <tr><td style="font-weight:600;">01.06–30.06.2026</td><td style="text-align:right;">40 000 ₽</td><td>Reels + Stories</td><td>Instagram, ВК</td><td style="text-align:right;">60 000</td><td style="text-align:right;">480</td><td style="text-align:right;">0,8%</td><td style="text-align:right;">693 120 ₽</td></tr>
+        <tr><td style="font-weight:600;">01.07–31.07.2026</td><td style="text-align:right;">50 000 ₽</td><td>Пост-обзор + раздача</td><td>Инфлюенсеры</td><td style="text-align:right;">100 000</td><td style="text-align:right;">800</td><td style="text-align:right;">0,8%</td><td style="text-align:right;">1 155 200 ₽</td></tr>
+        <tr><td style="font-weight:600;">01.08–31.08.2026</td><td style="text-align:right;">70 000 ₽</td><td>Контекст + баннеры</td><td>WB + SMM + Ads</td><td style="text-align:right;">180 000</td><td style="text-align:right;">1 440</td><td style="text-align:right;">0,8%</td><td style="text-align:right;">2 079 360 ₽</td</tr>
       </tbody>
       <tfoot>
-        <tr style="background:#2E1F14; color:#F5F0E8;"><td style="font-weight:600;">ИТОГО за 3 месяца</td><td style="font-weight:600;">220 000 ₽</td><td>—</td><td>—</td><td>420 000</td><td>3 520</td><td>0,84%</td><td>5 082 880 ₽</td></tr>
+        <tr style="background:#2E1F14; color:#F5F0E8;"><td style="font-weight:600;">ИТОГО за 3 месяца</td><td style="text-align:right;"><strong>220 000 ₽</strong></td><td>—</td><td>—</td><td style="text-align:right;"><strong>420 000</strong></td><td style="text-align:right;"><strong>3 520</strong></td><td style="text-align:right;"><strong>0,84%</strong></td><td style="text-align:right;"><strong>5 082 880 ₽</strong></td></tr>
       </tfoot>
     </table>
 
