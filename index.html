@@ -195,37 +195,82 @@
       font-weight: 400;
     }
 
+    /* Исправленная таблица */
     .media-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13px;
       margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .media-table th,
+    .media-table td {
+      padding: 12px 8px;
+      border-bottom: 1px solid #e2d8ce;
+      text-align: center;
+      vertical-align: middle;
     }
 
     .media-table th {
       background: #2E1F14;
       color: #F5F0E8;
-      padding: 12px 10px;
-      text-align: center;
       font-weight: 500;
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.05em;
     }
 
     .media-table td {
-      padding: 12px 10px;
-      border-bottom: 1px solid #e2d8ce;
+      background: white;
       color: #2E1F14;
-      vertical-align: top;
     }
 
     .media-table tr:hover td {
       background: rgba(201,169,138,0.1);
     }
 
-    .media-table tr:last-child td {
+    .media-table tfoot tr td {
       background: #2E1F14;
       color: #F5F0E8;
+      font-weight: 600;
+    }
+
+    /* Таблица для медиаплана (другая, много колонок) */
+    .media-plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 12px;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .media-plan-table th,
+    .media-plan-table td {
+      padding: 10px 6px;
+      border-bottom: 1px solid #e2d8ce;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .media-plan-table th {
+      background: #2E1F14;
+      color: #F5F0E8;
+      font-weight: 500;
+      font-size: 11px;
+    }
+
+    .media-plan-table td {
+      background: white;
+    }
+
+    @media (max-width: 800px) {
+      .media-plan-table {
+        font-size: 10px;
+      }
+      .media-plan-table th,
+      .media-plan-table td {
+        padding: 6px 3px;
+      }
     }
 
     .photos-container {
@@ -420,10 +465,6 @@
       .two-col, .three-col, .kpi-grid {
         grid-template-columns: 1fr;
       }
-      .media-table th, .media-table td {
-        padding: 8px 5px;
-        font-size: 11px;
-      }
     }
   </style>
 </head>
@@ -544,7 +585,7 @@
     </div>
   </div>
 
-  <!-- РАЗДЕЛ 5 -->
+  <!-- РАЗДЕЛ 5 — ИСПРАВЛЕННАЯ ТАБЛИЦА -->
   <div class="section">
     <div class="section-num">РАЗДЕЛ 05</div>
     <div class="section-title">Конкурентная среда (данные WB 23.03–21.04.2026)</div>
@@ -554,21 +595,21 @@
     <table class="media-table">
       <thead>
         <tr>
-          <th style="width: 80px;">Позиция</th>
-          <th style="width: 120px;">Бренд</th>
-          <th style="width: 100px;">Заказы, шт.</th>
-          <th style="width: 100px;">Доля рынка</th>
-          <th style="width: 100px;">Ср. цена, ₽</th>
-          <th style="width: 80px;">Рейтинг</th>
+          <th>Позиция</th>
+          <th>Бренд</th>
+          <th>Заказы, шт.</th>
+          <th>Доля рынка</th>
+          <th>Ср. цена, ₽</th>
+          <th>Рейтинг</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td style="text-align: center;">1</td><td>DRSS</td><td style="text-align: right;">47 055</td><td style="text-align: right;">8,51%</td><td style="text-align: right;">1 580</td><td style="text-align: right;">5,0</td></tr>
-        <tr><td style="text-align: center;">2</td><td>BIRKA ART</td><td style="text-align: right;">23 489</td><td style="text-align: right;">4,25%</td><td style="text-align: right;">2 054</td><td style="text-align: right;">5,0</td></tr>
-        <tr><td style="text-align: center;">3</td><td>WAISTLINE</td><td style="text-align: right;">19 620</td><td style="text-align: right;">3,55%</td><td style="text-align: right;">2 435</td><td style="text-align: right;">4,87</td></tr>
-        <tr><td style="text-align: center;">4</td><td>LIE</td><td style="text-align: right;">16 808</td><td style="text-align: right;">3,04%</td><td style="text-align: right;">1 565</td><td style="text-align: right;">5,0</td></tr>
-        <tr><td style="text-align: center;">5</td><td>Lavites</td><td style="text-align: right;">16 460</td><td style="text-align: right;">2,98%</td><td style="text-align: right;">1 787</td><td style="text-align: right;">4,89</td></tr>
-        <tr style="background: rgba(201,169,138,0.15);"><td style="text-align: center;">16</td><td><strong>MUNI LACE</strong></td><td style="text-align: right;"><strong>8 268</strong></td><td style="text-align: right;"><strong>1,5%</strong></td><td style="text-align: right;"><strong>1 444</strong></td><td style="text-align: right;"><strong>4,77</strong></td></tr>
+        <tr><td>1</td><td>DRSS</td><td>47 055</td><td>8,51%</td><td>1 580</td><td>5,0</td></tr>
+        <tr><td>2</td><td>BIRKA ART</td><td>23 489</td><td>4,25%</td><td>2 054</td><td>5,0</td></tr>
+        <tr><td>3</td><td>WAISTLINE</td><td>19 620</td><td>3,55%</td><td>2 435</td><td>4,87</td></tr>
+        <tr><td>4</td><td>LIE</td><td>16 808</td><td>3,04%</td><td>1 565</td><td>5,0</td></tr>
+        <tr><td>5</td><td>Lavites</td><td>16 460</td><td>2,98%</td><td>1 787</td><td>4,89</td></tr>
+        <tr style="background: rgba(201,169,138,0.15);"><td><strong>16</strong></td><td><strong>MUNI LACE</strong></td><td><strong>8 268</strong></td><td><strong>1,5%</strong></td><td><strong>1 444</strong></td><td><strong>4,77</strong></td></tr>
       </tbody>
     </table>
 
@@ -664,7 +705,7 @@
     <div class="section-num">РАЗДЕЛ 11–12</div>
     <div class="section-title">Бюджет, сроки и медиаплан</div>
     
-    <table class="media-table">
+    <table class="media-plan-table">
       <thead>
         <tr>
           <th>Сроки</th>
@@ -678,13 +719,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td style="font-weight:600;">01.06–30.06.2026</td><td style="text-align:right;">60 000 ₽</td><td>Инфографика, карточки</td><td>WB внутренняя</td><td style="text-align:right;">80 000</td><td style="text-align:right;">800</td><td style="text-align:right;">1,0%</td><td style="text-align:right;">1 155 200 ₽</td></tr>
-        <tr><td style="font-weight:600;">01.06–30.06.2026</td><td style="text-align:right;">40 000 ₽</td><td>Reels + Stories</td><td>Instagram, ВК</td><td style="text-align:right;">60 000</td><td style="text-align:right;">480</td><td style="text-align:right;">0,8%</td><td style="text-align:right;">693 120 ₽</td></tr>
-        <tr><td style="font-weight:600;">01.07–31.07.2026</td><td style="text-align:right;">50 000 ₽</td><td>Пост-обзор + раздача</td><td>Инфлюенсеры</td><td style="text-align:right;">100 000</td><td style="text-align:right;">800</td><td style="text-align:right;">0,8%</td><td style="text-align:right;">1 155 200 ₽</td></tr>
-        <tr><td style="font-weight:600;">01.08–31.08.2026</td><td style="text-align:right;">70 000 ₽</td><td>Контекст + баннеры</td><td>WB + SMM + Ads</td><td style="text-align:right;">180 000</td><td style="text-align:right;">1 440</td><td style="text-align:right;">0,8%</td><td style="text-align:right;">2 079 360 ₽</td></tr>
+        <tr><td style="font-weight:600;">01.06–30.06.2026</td><td>60 000 ₽</td><td>Инфографика, карточки</td><td>WB внутренняя</td><td>80 000</td><td>800</td><td>1,0%</td><td>1 155 200 ₽</td></tr>
+        <tr><td style="font-weight:600;">01.06–30.06.2026</td><td>40 000 ₽</td><td>Reels + Stories</td><td>Instagram, ВК</td><td>60 000</td><td>480</td><td>0,8%</td><td>693 120 ₽</td></tr>
+        <tr><td style="font-weight:600;">01.07–31.07.2026</td><td>50 000 ₽</td><td>Пост-обзор + раздача</td><td>Инфлюенсеры</td><td>100 000</td><td>800</td><td>0,8%</td><td>1 155 200 ₽</td></tr>
+        <tr><td style="font-weight:600;">01.08–31.08.2026</td><td>70 000 ₽</td><td>Контекст + баннеры</td><td>WB + SMM + Ads</td><td>180 000</td><td>1 440</td><td>0,8%</td><td>2 079 360 ₽</td></tr>
       </tbody>
       <tfoot>
-        <tr style="background:#2E1F14; color:#F5F0E8;"><td style="font-weight:600;">ИТОГО за 3 месяца</td><td style="text-align:right;"><strong>220 000 ₽</strong></td><td>—</td><td>—</td><td style="text-align:right;"><strong>420 000</strong></td><td style="text-align:right;"><strong>3 520</strong></td><td style="text-align:right;"><strong>0,84%</strong></td><td style="text-align:right;"><strong>5 082 880 ₽</strong></td></tr>
+        <tr style="background:#2E1F14; color:#F5F0E8;"><td style="font-weight:600;">ИТОГО за 3 месяца</td><td style="font-weight:600;">220 000 ₽</td><td>—</td><td>—</td><td>420 000</td><td>3 520</td><td>0,84%</td><td>5 082 880 ₽</td></tr>
       </tfoot>
     </table>
 
